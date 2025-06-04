@@ -1,5 +1,9 @@
 export const Card = ({ children, className = "" }) => {
-    return <div className={`bg-slate-800/50 border border-slate-700 rounded-lg ${className}`}>{children}</div>
+    return <div className={`border border-slate-700 rounded-lg ${className}`}
+    style={{
+        background: 'linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)',
+      }}
+    >{children}</div>
   }
   
   export const CardHeader = ({ children, className = "" }) => {
