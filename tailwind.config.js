@@ -1,14 +1,12 @@
 // tailwind.config.js
-module.exports = {
-    content: ["./src/**/*.{js,jsx,ts,tsx}"],
-    theme: {
-      extend: {
-        fontFamily: {
-          inter: ['Inter', 'sans-serif'],
-          syne: ['Syne', 'sans-serif'],
-        },
+export default {
+  theme: {
+    extend: {
+      fontFamily: {
+        syne: ['Syne', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
-    plugins: [],
-  };
-  
+  },
+  plugins: [],
+}

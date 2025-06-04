@@ -15,32 +15,32 @@ function Nav({ menuItems }) {
       <nav className=" md:border-2 border-0 md:border-[#696868] md:rounded-3xl bg-[linear-gradient(123.64deg,rgba(255,255,255,0)_-22.38%,rgba(255,255,255,0.039)_70.38%)] max-w-[987px] mx-auto px-4 flex items-center justify-between py-2.5">
         <a
           href=""
-          className="bg-[linear-gradient(97.89deg,_#FFFFFF_70.67%,_rgba(117,122,140,0)_108.55%)] bg-clip-text text-transparent"
+          className=" font-inter bg-[linear-gradient(97.89deg,_#FFFFFF_70.67%,_rgba(117,122,140,0)_108.55%)] bg-clip-text text-transparent"
         >
           AI BIG DATA
         </a>
         <ul className="md:flex items-center gap-7  hidden">
           <li className="flex items-center gap-1">
             <img src={icon1} alt="" />
-            <a className="text-[10px] font-bold text-white" href="">
+            <a className="text-[10px] font-bold text-white font-inter" href="">
               {menuItems.server}
             </a>
           </li>
           <li className="flex items-center gap-1">
             <img src={icon2} alt="" />
-            <a className="text-[10px] font-bold text-white" href="">
+            <a className="text-[10px] font-bold text-white font-inter" href="">
               {menuItems.wallet}
             </a>
           </li>
           <li className="flex items-center gap-1">
             <img src={icon3} alt="" />
-            <a className="text-[10px] font-bold text-white" href="">
+            <a className="text-[10px] font-bold text-white font-inter" href="">
               {menuItems.cloud}
             </a>
           </li>
           <li className="flex items-center gap-1">
             <img src={icon4} alt="" />
-            <a className="text-[10px] font-bold text-white" href="">
+            <a className="text-[10px] font-bold text-white font-inter" href="">
               {menuItems.signin}
             </a>
           </li>
@@ -62,25 +62,25 @@ function Nav({ menuItems }) {
             <ul className="flex flex-col gap-6">
             <li className="flex items-center gap-1">
                 <img src={icon1} alt="" />
-                <a className="text-[10px] font-bold text-white" href="">
+                <a className="text-[10px] font-bold text-white font-inter" href="">
                   {menuItems.server}
                 </a>
               </li>
               <li className="flex items-center gap-1">
                 <img src={icon2} alt="" />
-                <a className="text-[10px] font-bold text-white" href="">
+                <a className="text-[10px] font-bold text-white font-inter" href="">
                   {menuItems.wallet}
                 </a>
               </li>
               <li className="flex items-center gap-1">
                 <img src={icon3} alt="" />
-                <a className="text-[10px] font-bold text-white" href="">
+                <a className="text-[10px] font-bold text-white font-inter" href="">
                   {menuItems.cloud}
                 </a>
               </li>
               <li className="flex items-center gap-1">
                 <img src={icon4} alt="" />
-                <a className="text-[10px] font-bold text-white" href="">
+                <a className="text-[10px] font-bold text-white font-inter" href="">
                   {menuItems.signin}
                 </a>
               </li>
@@ -90,7 +90,7 @@ function Nav({ menuItems }) {
       </AnimatePresence>
       
 
-        <button className="w-36 h-9 bg-[#0075FF] text-white rounded-2xl text-[10px] md:flex items-center justify-center hidden">
+        <button className="font-inter w-36 h-9 bg-[#0075FF] text-white rounded-2xl text-[10px] md:flex items-center justify-center hidden">
           NEW SERVER
         </button>
         <button onClick={modalFunction} className="md:hidden flex">

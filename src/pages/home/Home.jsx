@@ -17,6 +17,7 @@ import img4 from "../../assets/images/40032b0da020107eb19d0a0dce360f4763df568e.p
 import img5 from "../../assets/images/e3c261046deabe2df8c53e96542544e2f68a63fb.png";
 import img6 from "../../assets/images/0ba90eb44552187f07559ce1747460869f7cb165.png"
 import Footer from "../../components/footer/footer";
+import "./Home.css"
 
 function Home() {
   return (
@@ -27,11 +28,11 @@ function Home() {
         <div className="max-w-[1483px] w-full mx-auto px-5 ">
           <div className="md:flex justify-between ">
             <div>
-              <h1 className="lg:text-8xl sm:text-7xl text-6xl font-bold sm:leading-20 mb-10">
+              <h1 className=" lg:text-8xl sm:text-7xl text-6xl font-bold sm:leading-20 mb-10">
                 Big <span className="font-extrabold">Perfect</span> <br /> Data &
                 Domain.
               </h1>
-              <button className="flex items-center gap-9 h-12 rounded-[102px] shadow-lg border-none p-1 pl-6">
+              <button className="flex items-center gap-9 h-12 rounded-[102px] shadow-lg border-none p-1 pl-6 cursor-pointer">
                 <span className="text-lg opacity-25 font-bold ">DOMAIN.AI</span>
                 <span className="text-2xl font-bold text-white bg-gradient-to-r from-[#6756FF] to-white px-4 rounded-[76px]">
                   GO!
@@ -93,7 +94,7 @@ function Home() {
           {/*  */}
           <div className="">
             <p className="text-2xl font-bold mb-6">
-              <span className="font-extrabold">CPU</span> Platinum Processor
+              <span className="font-extrabold">RAM</span> DDR4 MEMORY
             </p>
             <div className="pl-4 pr-11 py-4 rounded-[102px] flex justify-between items-center lg:h-28 h-24 shadow-[0_0_25px_0_#0000000D] lg:w-[360px] w-full">
               <span className="bg-[linear-gradient(180deg,_#01B574_0%,_#89D5B2_129.35%)] h-full w-22 rounded-[76px] text-white flex items-center justify-center text-[20px] font-bold">
@@ -105,7 +106,7 @@ function Home() {
           {/*  */}
           <div className="">
             <p className="text-2xl font-bold mb-6">
-              <span className="font-extrabold">CPU</span> Platinum Processor
+              <span className="font-extrabold">NVMe </span> SSD 16 PB
             </p>
             <div className="pl-4 pr-11 py-4 rounded-[102px] flex justify-between items-center lg:h-28 h-24 shadow-[0_0_25px_0_#0000000D] lg:w-[360px] w-full">
               <span className="bg-[linear-gradient(180deg,_#000000_0%,_#8F8F8F_129.35%)] h-full w-22 rounded-[76px] text-white flex items-center justify-center text-[20px] font-bold">
@@ -117,7 +118,7 @@ function Home() {
           {/*  */}
           <div className="">
             <p className="text-2xl font-bold mb-6">
-              <span className="font-extrabold">CPU</span> Platinum Processor
+              <span className="font-extrabold">GPU</span>  AI + GAME
             </p>
             <div className="pl-4 pr-11 py-4 rounded-[102px] flex justify-between items-center lg:h-28 h-24 shadow-[0_0_25px_0_#0000000D] lg:w-[360px] w-full">
               <span className="bg-[linear-gradient(268.54deg,_#FFE990_-24.93%,_#D1E51D_98.93%)] h-full w-24 rounded-[76px] text-white flex items-center justify-center text-[20px] font-bold">
@@ -129,9 +130,9 @@ function Home() {
           {/*  */}
           <div className="">
             <p className="text-2xl font-bold mb-6">
-              <span className="font-extrabold">CPU</span> Platinum Processor
+              <span className="font-extrabold">18.28</span> 
             </p>
-            <div className="p-4 rounded-[102px] flex justify-between items-center lg:h-28 h-24 shadow-[0_0_25px_0_#0000000D] lg:w-[360px] w-full">
+            <div className="p-4 rounded-[102px] flex justify-between items-center lg:h-28 h-24 shadow-[0_0_25px_0_#0000000D] lg:w-[360px] w-full cursor-pointer">
               <span className="bg-[linear-gradient(90deg,_#6A56FF_0%,_#003EFF_100%)] h-full w-full rounded-[76px] text-white flex items-center justify-center text-[20px] font-bold">
                 18.28 USDT / DAY
               </span>
@@ -140,7 +141,7 @@ function Home() {
           {/*  */}
           <div className="">
             <p className="text-2xl font-bold mb-6">
-              <span className="font-extrabold">CPU</span> Platinum Processor
+              <span className="font-extrabold"></span> VPS / VDS
             </p>
             <div className="pl-4 pr-11 py-4 rounded-[102px] flex justify-between items-center lg:h-28 h-24 shadow-[0_0_25px_0_#0000000D] lg:w-[360px] w-full">
               <span className="bg-[linear-gradient(180deg,_#1DC1E5_0%,_#FFFFFF_129.35%)] h-full w-22 rounded-[76px] text-white flex items-center justify-center text-[20px] font-bold">
@@ -183,7 +184,7 @@ function Home() {
             <div className="sm:w-[474px] sm:h-[474px] w-full h-96 md:rounded-[100px] rounded-[60px] md:p-8 p-4 shadow-[0px_0px_25px_0px_#0000000D] mx-auto">
               <img className="w-full h-full md:rounded-[100px] rounded-[60px]" src={panel} alt="" />
             </div>
-            <div className="lg:text-left text-right">
+            <div className="lg:text-left text-right lg:max-w-80">
               <div className="relative w-2xs h-28 rounded-3xl shadow-[0px_0px_25px_0px_#0000000D] flex gap-4 items-center pl-16 lg:mb-24 mb-4 lg:mr-auto ml-auto">
                 <p className="text-2xl font-bold leading-6 text-right">
                   Real Time <br />
@@ -195,14 +196,26 @@ function Home() {
               <h4 className="sm:text-3xl text-2xl font-bold lg:text-left text-right lg:mb-10 mb-4">
                 We build the future
               </h4>
-              <p className="lg:max-w-80 lg:text-left ml-auto">
-               <span className="font-bold pb-6"> +++ Neural Core 4048 GB CPU AI W — extreme AI power</span> <br />
-                Multi Super
-                App — social, marketplace, AI & fintech  <br />
-                Data Center — 1 PB NVMe
-                ultra-fast storage <br />
-                10-100 Gb/s
+              <p className="lg:text-left ml-auto font-bold mb-6">
+               +++ Neural Core 4048 GB CPU AI W — extreme AI power
+                
               </p>
+               <ul className="list-disc">
+                <li>
+                  <p className="">Multi Super App — social, marketplace, AI & fintech</p>
+                </li>
+                <li>
+                  <p>
+                  Data Center — <span className="font-bold">1 PB NVMe</span> ultra-fast storage
+                  </p>
+                </li>
+                <li>
+                  <p>
+                  10-100 Gb/s
+                  </p>
+                </li>
+               </ul>
+             
             </div>
           </div>
         </div>
@@ -274,7 +287,7 @@ function Home() {
       </section>
       {/* section6 */}
       <section className="relative w-full md:pb-12 pb-5 lg:pt-64 md:pt-32 sm:pt-20 pt-40">
-        <div className="absolute max-w-[1236px] w-full mx-auto px-5 left-0 right-0  bottom-[-190px] shadow-[0_0_25px_0_#FFFFFF40] bg-black lg:py-28 md:py-16 py-12 sm:flex md:rounded-[100px] rounded-4xl md:pl-24 pl-5 md:gap-20">
+        <div className="absolute max-w-[1236px] w-full mx-auto px-5 left-0 right-0  bottom-[-190px] shadow-[0_0_25px_0_#FFFFFF40] bg-black lg:py-28 md:py-16 py-12 sm:flex md:rounded-[100px] rounded-4xl md:pl-24 pl-5 md:gap-20 bg-[radial-gradient(#444_1px,transparent_1px)] bg-[size:20px_20px]">
        <h3 className="lg:text-6xl sm:text-5xl text-4xl  font-bold text-white lg:max-w-[400px] sm:max-w-[300px] max-w-full sm:text-left text-center sm:mb-0 mb-5">Sign Up For <span className="text-[#FFEA7A]">Big Data</span> Today
        </h3>
        <div className="sm:text-left text-center">

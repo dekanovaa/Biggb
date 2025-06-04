@@ -14,7 +14,7 @@ function Sidebar({ sideItems, iscart }) {
       >
         <p className="text-center">
           {" "}
-          <a href="" className="text-white-gradient font-medium">
+          <a href="" className="font-inter text-white-gradient font-medium">
             BIG DATA AI
           </a>
         </p>
@@ -31,7 +31,7 @@ function Sidebar({ sideItems, iscart }) {
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="/dashboard" className="flex items-center">
               <i class="fa-solid fa-house-chimney text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">
+              <p className="font-inter font-medium text-white ml-4">
                 {" "}
                 {sideItems?.dashboard}
               </p>
@@ -40,13 +40,13 @@ function Sidebar({ sideItems, iscart }) {
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="" className="flex items-center">
               <i class="fa-solid fa-chart-simple text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">{sideItems?.tables}</p>
+              <p className="font-inter font-medium text-white ml-4">{sideItems?.tables}</p>
             </a>
           </li>
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="/billing" className="flex items-center">
               <i class="fa-solid fa-credit-card text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">
+              <p className="font-inter font-medium text-white ml-4">
                 {sideItems?.billing}
               </p>
             </a>
@@ -54,14 +54,14 @@ function Sidebar({ sideItems, iscart }) {
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="" className="flex items-center">
               <i class="fa-solid fa-wrench text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">{sideItems?.web}</p>
+              <p className="font-inter font-medium text-white ml-4">{sideItems?.web}</p>
             </a>
           </li>
-          <p className=" text-white pl-5 my-3 text-[12px]">ACCOUNT PAGES</p>
+          <p className="font-inter text-white pl-5 my-3 text-[12px]">ACCOUNT PAGES</p>
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="" className="flex items-center">
               <i class="fa-solid fa-user text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">
+              <p className="font-inter font-medium text-white ml-4">
                 {sideItems?.profile}
               </p>
             </a>
@@ -69,7 +69,7 @@ function Sidebar({ sideItems, iscart }) {
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="" className="flex items-center">
               <i class="fa-solid fa-file text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">
+              <p className="font-inter font-medium text-white ml-4">
                 {sideItems?.storage}
               </p>
             </a>
@@ -77,17 +77,17 @@ function Sidebar({ sideItems, iscart }) {
           <li className="py-3 px-4 rounded-2xl hover-effect">
             <a href="" className="flex items-center">
               <i class="fa-solid fa-rocket text-[#0075FF] p-2 bg-[#1A1F37] rounded-[12px]"></i>
-              <p className="font-medium text-white ml-4">{sideItems?.sign}</p>
+              <p className="font-inter font-medium text-white ml-4">{sideItems?.sign}</p>
             </a>
           </li>
         </ul>
         {iscart ? (
           <div className="cart w-full h-auto rounded-2xl p-4">
             <img src={icon} alt="" className="mb-5" />
-            <p className="font-bold text-white text-[14px]">Need help?</p>
-            <p className="text-white text-[12px] font-normal mb-4">Please</p>
+            <p className="font-inter font-bold text-white text-[14px]">Need help?</p>
+            <p className="font-inter text-white text-[12px] font-normal mb-4">Please</p>
             <button
-              className="w-full h-9  rounded-[12px] text-[10px] font-bold text-white cursor-pointer"
+              className="font-inter w-full h-9  rounded-[12px] text-[10px] font-bold text-white cursor-pointer"
               style={{
                 background:
                   "linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%)",

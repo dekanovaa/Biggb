@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+.font{
+  font-family: 'inter', sans-serif;
+}
 .bg-billing{
     background-image: url(../../assets/images/Background.png);
     background-position: center;

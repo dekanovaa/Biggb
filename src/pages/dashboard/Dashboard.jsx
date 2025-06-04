@@ -2,11 +2,19 @@ import Header from "../../components/header/Header";
 import Sidebar from "../../components/sidebar/Sidebar";
 import React from "react";
 import "./Dashboard.css";
-import { useState, useEffect } from "react"
-import { ChevronUp, Database, Cpu, Wallet, Cloud, Activity } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/cart/Cart"
+import { Button } from "../../components/Button"
+import { Badge } from "../../components/Badge"
+import { Progress } from "../../components/Progress"
+import { HardDrive, Cpu, Shield, MoreHorizontal } from "../../components/Icons"
+import { CircularProgress } from "../../components/CircularProgress"
+
 
 
 function Dashboard() {
+    // Sample data for the bar chart
+    // const chartData = [320, 250, 120, 300, 450, 420, 480, 300, 180]
+    // const maxValue = Math.max(...chartData)
     const menu = {
         dashboard: "Dashboard",
         tables: "Tables",
@@ -28,97 +36,31 @@ function Dashboard() {
       signin: "SIGN IN",
     };
     // 
-    const [todayUsers, setTodayUsers] = useState(2300)
-    const [walletBalance, setWalletBalance] = useState(53)
-    const [cpuUsage, setCpuUsage] = useState(99.87)
-  
-    // Simulate real-time updates
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setTodayUsers((prev) => prev + Math.floor(Math.random() * 10 - 5))
-        setWalletBalance((prev) => Math.max(0, prev + (Math.random() - 0.5) * 2))
-        setCpuUsage((prev) => Math.max(95, Math.min(100, prev + (Math.random() - 0.5) * 0.5)))
-      }, 3000)
-  
-      return () => clearInterval(interval)
-    }, [])
-  
-    // Bar chart data
-    const barData = [85, 92, 78, 95, 88, 82, 90, 76, 84, 91, 79, 87]
-    const maxBarHeight = Math.max(...barData)
-  
-    // Projects data
-    const projects = [
-      {
-        id: "12.235.2.33",
-        status: "ONLINE",
-        cpu: "CPU 16 CORE RAM 16 GB",
-        price: "21 USDT",
-        usage: 85,
-        domain: "GET DOMAIN",
-        action: "UP",
-        root: "ROOT 79.NHID-CHI10",
-      },
-      {
-        id: "119.12.04.77",
-        status: "ONLINE",
-        cpu: "CPU 8 CORE RAM 2 GB",
-        price: "1 USDT",
-        usage: 15,
-        domain: "GET DOMAIN",
-        action: "UP",
-        root: "ROOT 19.NHID-CHI11",
-      },
-      {
-        id: "68.85.356.70",
-        status: "ONLINE",
-        cpu: "CPU 16 CORE RAM 8 GB",
-        price: "28 USDT",
-        usage: 100,
-        domain: "GET DOMAIN",
-        action: "UP",
-        root: "ROOT 55.NHID-CHI12",
-      },
-      {
-        id: "10.67.52.11",
-        status: "ONLINE",
-        cpu: "CPU 8 CORE RAM 4 GB",
-        price: "21 USDT",
-        usage: 100,
-        domain: "YTUNP.ORG",
-        action: "UP",
-        root: "ROOT 03.NHID-CHI13",
-      },
-      {
-        id: "31.31.08.63",
-        status: "ONLINE",
-        cpu: "CPU 8 CORE RAM 2 GB",
-        price: "14 USDT",
-        usage: 23,
-        domain: "GET DOMAIN",
-        action: "UP",
-        root: "ROOT 55.NHID-CHI14",
-      },
-      {
-        id: "85.53.21.10",
-        status: "ONLINE",
-        cpu: "CPU 16 CORE RAM 48 GB",
-        price: "45 USDT",
-        usage: 60,
-        domain: "HULL.COM",
-        action: "UP",
-        root: "ROOT 55.NHID-CHI15",
-      },
+    const backupData = [
+      { id: "24/7/365", ip: "42.66.4.77", time: "22 DEC 7:20 PM", status: "success" },
+      { id: "12.31.45.66", time: "21 DEC 11:21 PM", status: "error" },
+      { id: "21.31.122.3", time: "21 DEC 9:28 PM", status: "info" },
+      { id: "32.101.45", time: "20 DEC 3:52 PM", status: "warning" },
+      { id: "33.56.73.33", time: "18 DEC 4:41 PM", status: "adobe" },
     ]
   
-    // Backup files data
-    const backupFiles = [
-      { name: "42.66.4.77", size: "2.66 GB", time: "20 Dec 7:01 PM" },
-      { name: "12.31.45.66", size: "1.2 GB", time: "19 Dec 11:30 AM" },
-      { name: "21.31.122.3", size: "890 MB", time: "18 Dec 9:45 AM" },
-      { name: "32.101.45", size: "1.5 GB", time: "17 Dec 3:22 PM" },
-      { name: "45.22.11.88", size: "750 MB", time: "16 Dec 6:41 PM" },
+    const projectData = [
+      { ip: "12.233.2.33", specs: "CPU 12 CORE RAM 18 GB", cost: "21 USDT", load: 60, status: "online" },
+      { ip: "313.12.26.77", specs: "CPU 2 CORE RAM 2 GB", cost: "1 USDT", load: 10, status: "online" },
+      { ip: "65.45.356.70", specs: "CPU 16 CORE RAM 8 GB", cost: "25 USDT", load: 100, status: "online" },
+      {
+        ip: "50.62.32.11",
+        specs: "CPU 8 CORE RAM 4 GB",
+        cost: "21 USDT",
+        load: 100,
+        status: "online",
+        domain: "YUUIP.ORG",
+      },
+      { ip: "31.31.06.43", specs: "CPU 4 CORE RAM 2 GB", cost: "14 USDT", load: 25, status: "online" },
+      { ip: "95.53.21.10", specs: "CPU 18 CORE RAM 48 GB", cost: "45 USDT", load: 40, status: "online" },
     ]
+  
+    
   
   
 
@@ -127,296 +69,314 @@ function Dashboard() {
         <Sidebar sideItems={menu} iscart={cart}/>
         <Header title={title} menuItems={menu2}/>
        <div className="pt-28 pl-[300px]">
-       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-4">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-          {/* Active Users - Spans 2 columns */}
-          <div className="lg:col-span-2 bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="mb-4">
-              <h3 className="text-white text-lg font-semibold mb-1">Active Users</h3>
-              <p className="text-blue-400 text-sm">+23% from last week</p>
-            </div>
-
-            {/* Bar Chart */}
-            <div className="flex items-end justify-between h-20 mb-4">
-              {barData.map((height, index) => (
-                <div key={index} className="flex-1 mx-0.5">
-                  <div
-                    className="w-full bg-gradient-to-t from-blue-500 to-blue-300 rounded-t-sm transition-all duration-500"
-                    style={{ height: `${(height / maxBarHeight) * 100}%` }}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="flex items-center justify-center mb-1">
-                  <Activity className="w-4 h-4 text-blue-400 mr-1" />
-                  <span className="text-xs text-blue-400">Users</span>
-                </div>
-                <div className="text-white font-bold">32,864</div>
-              </div>
-              <div>
-                <div className="flex items-center justify-center mb-1">
-                  <Database className="w-4 h-4 text-blue-400 mr-1" />
-                  <span className="text-xs text-blue-400">Clicks</span>
-                </div>
-                <div className="text-white font-bold">2.42m</div>
-              </div>
-              <div>
-                <div className="flex items-center justify-center mb-1">
-                  <Wallet className="w-4 h-4 text-blue-400 mr-1" />
-                  <span className="text-xs text-blue-400">Revenue</span>
-                </div>
-                <div className="text-white font-bold">32 USDT</div>
-              </div>
-              <div>
-                <div className="flex items-center justify-center mb-1">
-                  <ChevronUp className="w-4 h-4 text-blue-400 mr-1" />
-                  <span className="text-xs text-blue-400">Other</span>
-                </div>
-                <div className="text-white font-bold">6</div>
+       <div className="min-h-screen">
+      <div className="max-w-7xl mx-auto space-y-6"
+      
+      >
+        {/* Header */}
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <div className="text-white">
+              <div className="text-sm opacity-75">Today's Users</div>
+              <div className="text-2xl font-bold flex items-center gap-2">
+                2,300
+                <span className="text-red-400 text-sm">-5%</span>
               </div>
             </div>
           </div>
-
-          {/* Today's Users */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="text-center">
-              <p className="text-blue-400 text-sm mb-2">Today's Users</p>
-              <div className="text-2xl font-bold text-white mb-1">{todayUsers.toLocaleString()}</div>
-              <div className="text-green-400 text-sm">+5%</div>
-            </div>
-          </div>
-
-          {/* Cloud Storage */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Cloud className="w-5 h-5 text-blue-400 mr-2" />
-                <span className="text-white font-semibold">CLOUD</span>
-              </div>
-              <p className="text-blue-400 text-xs mb-4">PRO</p>
-
-              {/* Circular Progress */}
-              <div className="relative w-16 h-16 mx-auto mb-3">
-                <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 60 60">
-                  <circle cx="30" cy="30" r="25" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="4" fill="none" />
-                  <circle
-                    cx="30"
-                    cy="30"
-                    r="25"
-                    stroke="#3B82F6"
-                    strokeWidth="4"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeDasharray={`${2 * Math.PI * 25}`}
-                    strokeDashoffset={`${2 * Math.PI * 25 * (1 - 0.95)}`}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg font-bold text-white">95%</span>
-                </div>
-              </div>
-
-              <div className="text-xs text-blue-400 space-y-1">
-                <div>487 GB</div>
-                <div>512 GB</div>
+          <div className="flex items-center gap-4">
+            <div className="text-white text-right">
+              <div className="text-sm opacity-75">WALLET</div>
+              <div className="text-xl font-bold flex items-center gap-2">
+                53 USDT
+                <span className="text-green-400 text-sm">+12 DAY</span>
               </div>
             </div>
-          </div>
-
-          {/* Wallet */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="text-center">
-              <p className="text-blue-400 text-sm mb-2">WALLET</p>
-              <div className="text-2xl font-bold text-white mb-1">{walletBalance.toFixed(0)} USDT</div>
-              <div className="text-green-400 text-sm">+1% DAY</div>
-              <button className="mt-3 bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded-lg transition-colors">
-                COPY USDT ADDRESS
-              </button>
-            </div>
-          </div>
-
-          {/* CPU */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Cpu className="w-5 h-5 text-blue-400 mr-2" />
-                <span className="text-white font-semibold">CPU</span>
-              </div>
-              <p className="text-blue-400 text-xs mb-2">PROCESSOR</p>
-              <p className="text-white text-sm font-semibold mb-3">1 CORE GOLD</p>
-              <p className="text-blue-400 text-xs mb-3">26.29 GB</p>
-
-              {/* CPU Usage Circle */}
-              <div className="relative w-16 h-16 mx-auto">
-                <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 60 60">
-                  <circle cx="30" cy="30" r="25" stroke="rgba(34, 197, 94, 0.2)" strokeWidth="4" fill="none" />
-                  <circle
-                    cx="30"
-                    cy="30"
-                    r="25"
-                    stroke="#22C55E"
-                    strokeWidth="4"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeDasharray={`${2 * Math.PI * 25}`}
-                    strokeDashoffset={`${2 * Math.PI * 25 * (1 - cpuUsage / 100)}`}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm font-bold text-white">{cpuUsage.toFixed(2)}</span>
-                </div>
-              </div>
-              <p className="text-green-400 text-xs mt-2">ACTIVE</p>
-            </div>
+            <Button>GET NEW PANEL</Button>
           </div>
         </div>
 
-        {/* Middle Section */}
+        {/* Top Row */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Active Board - Area Chart */}
-          <div className="lg:col-span-2 bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="mb-6">
-              <h3 className="text-white text-lg font-semibold mb-1">Active board</h3>
-              <p className="text-blue-400 text-sm">Real-time activity</p>
-            </div>
+          {/* Active Users Chart */}
+          <Card className="text-white lg:col-span-1">
+            <CardHeader>
+              <CardTitle>
+                <div>
+                  <div className="text-lg">Active Users</div>
+                  <div className="text-green-400 text-sm">(+23) than last week</div>
+                </div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {/* Simple bar chart representation */}
+                <div className="flex items-end justify-between h-32 gap-2">
+                  {[30, 25, 15, 35, 50, 45, 55, 35, 20].map((height, i) => (
+                    <div
+                      key={i}
+                      className="bg-blue-500 rounded-t w-4 transition-all duration-300"
+                      style={{ height: `${height}%` }}
+                    />
+                  ))}
+                </div>
 
-            <div className="h-48 relative">
-              <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(59, 130, 246, 0.8)" />
-                    <stop offset="100%" stopColor="rgba(59, 130, 246, 0.1)" />
-                  </linearGradient>
-                </defs>
-
-                <path d="M0,80 Q10,70 20,75 T40,65 T60,70 T80,60 T100,65 L100,100 L0,100 Z" fill="url(#areaGradient)" />
-                <path d="M0,60 Q15,50 30,55 T60,45 T80,50 T100,45 L100,100 L0,100 Z" fill="rgba(37, 99, 235, 0.6)" />
-                <path d="M0,40 Q20,30 40,35 T80,25 T100,30 L100,100 L0,100 Z" fill="rgba(29, 78, 216, 0.4)" />
-
-                {/* Data points */}
-                <circle cx="85" cy="25" r="1.5" fill="white" />
-                <circle cx="95" cy="35" r="1.5" fill="white" />
-              </svg>
-
-              {/* Axis labels */}
-              <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-blue-400 py-2">
-                <span>100%</span>
-                <span>80%</span>
-                <span>60%</span>
-                <span>40%</span>
-                <span>20%</span>
-                <span>0%</span>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span>Users</span>
+                    <span className="font-bold">32,984</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Clicks</span>
+                    <span className="font-bold">2.42m</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span>DAV</span>
+                    <span className="font-bold">32 USDT</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>IP</span>
+                    <span className="font-bold">6</span>
+                  </div>
+                </div>
               </div>
+            </CardContent>
+          </Card>
 
-              <div className="absolute bottom-0 left-8 right-0 flex justify-between text-xs text-blue-400">
-                <span>Jan</span>
-                <span>Mar</span>
-                <span>May</span>
-                <span>Jul</span>
-                <span>Sep</span>
-                <span>Nov</span>
+          {/* Cloud Storage */}
+          <Card className="text-white">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <HardDrive />
+                CLOUD
+                <Badge variant="secondary" className="bg-blue-600">
+                  Pro
+                </Badge>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center">
+              <CircularProgress value={95} size={128}>
+                <div className="text-center">
+                  <div className="text-3xl font-bold">95%</div>
+                  <div className="text-xs opacity-75">NVMe SSD</div>
+                </div>
+              </CircularProgress>
+              <div className="flex justify-between w-full text-sm mt-4">
+                <span>487 GB</span>
+                <span>512 GB</span>
               </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
-          {/* Backup Section */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-            <div className="mb-4">
-              <h3 className="text-white text-lg font-semibold mb-1">BACKUP</h3>
-              <p className="text-green-400 text-sm">● 24/7/365</p>
-            </div>
+          {/* CPU Performance */}
+          <Card className="text-white">
+            <CardHeader>
+              <CardTitle className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Cpu />
+                  CPU
+                </div>
+                <MoreHorizontal />
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-xs opacity-75">PROCESSOR</div>
+                    <div className="font-bold">1 CORE GOLD</div>
+                  </div>
+                  <div>
+                    <div className="text-xs opacity-75">RAM 32 GB</div>
+                    <div className="font-bold">26.29 GB</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <CircularProgress value={99.87} size={96} strokeWidth={6} color="rgb(34 197 94)">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-green-400">99.87</div>
+                      <div className="text-xs opacity-75">IDEAL</div>
+                    </div>
+                  </CircularProgress>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-            <div className="space-y-3">
-              {backupFiles.map((file, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    <div>
-                      <div className="text-white text-sm font-medium">{file.name}</div>
-                      <div className="text-blue-400 text-xs">{file.size}</div>
-                      <div className="text-blue-400 text-xs">{file.time}</div>
+        {/* Middle Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Active Board Chart */}
+          <Card className="text-white lg:col-span-2">
+            <CardHeader>
+              <CardTitle>
+                Active board
+                <div className="text-green-400 text-sm">(+5) more in today</div>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-48 relative">
+                <svg className="w-full h-full" viewBox="0 0 400 200">
+                  {/* Grid lines */}
+                  {[0, 50, 100, 150, 200].map((y) => (
+                    <line
+                      key={y}
+                      x1="0"
+                      y1={y}
+                      x2="400"
+                      y2={y}
+                      stroke="rgb(51 65 85)"
+                      strokeWidth="1"
+                      strokeDasharray="2,2"
+                    />
+                  ))}
+
+                  {/* Area chart */}
+                  <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="rgb(59 130 246)" stopOpacity="0.8" />
+                      <stop offset="100%" stopColor="rgb(59 130 246)" stopOpacity="0.1" />
+                    </linearGradient>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="rgb(34 197 94)" stopOpacity="0.8" />
+                      <stop offset="100%" stopColor="rgb(34 197 94)" stopOpacity="0.1" />
+                    </linearGradient>
+                  </defs>
+
+                  <path d="M0,150 Q50,120 100,140 T200,100 T300,120 T400,80 L400,200 L0,200 Z" fill="url(#gradient1)" />
+                  <path
+                    d="M0,180 Q50,160 100,170 T200,140 T300,150 T400,130 L400,200 L0,200 Z"
+                    fill="url(#gradient2)"
+                  />
+
+                  <path
+                    d="M0,150 Q50,120 100,140 T200,100 T300,120 T400,80"
+                    fill="none"
+                    stroke="rgb(59 130 246)"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M0,180 Q50,160 100,170 T200,140 T300,150 T400,130"
+                    fill="none"
+                    stroke="rgb(34 197 94)"
+                    strokeWidth="2"
+                  />
+                </svg>
+
+                <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs opacity-75 px-4">
+                  {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((month) => (
+                    <span key={month}>{month}</span>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Backup Status */}
+          <Card className="text-white">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Shield />
+                BACKUP
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {backupData.map((backup, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        backup.status === "success"
+                          ? "bg-green-500"
+                          : backup.status === "error"
+                            ? "bg-red-500"
+                            : backup.status === "info"
+                              ? "bg-blue-500"
+                              : backup.status === "warning"
+                                ? "bg-yellow-500"
+                                : "bg-purple-500"
+                      }`}
+                    ></div>
+                    <div className="flex-1">
+                      <div className="font-medium text-sm">{backup.ip || backup.id}</div>
+                      <div className="text-xs opacity-75">{backup.time}</div>
                     </div>
                   </div>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded transition-colors">
-                    GET BACKUP
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Projects Table */}
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h3 className="text-white text-lg font-semibold mb-1">Projects</h3>
-              <p className="text-blue-400 text-sm">● 6 IP ADRESS</p>
-            </div>
-          </div>
+        <Card className="text-white">
+          <CardHeader>
+            <CardTitle className="flex items-center justify-between">
+              <div>
+                Projects
+                <div className="text-green-400 text-sm">● 6 IP ADDRESS</div>
+              </div>
+              <MoreHorizontal />
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="grid grid-cols-6 gap-4 text-xs opacity-75 uppercase">
+                <span>Companies</span>
+                <span></span>
+                <span>Day</span>
+                <span>CPU Load</span>
+                <span></span>
+                <span></span>
+              </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="text-blue-400 text-sm border-b border-slate-700">
-                  <th className="text-left py-3">CONNECT</th>
-                  <th className="text-left py-3">STATUS</th>
-                  <th className="text-left py-3">CPU</th>
-                  <th className="text-left py-3">PRICE</th>
-                  <th className="text-left py-3">USAGE</th>
-                  <th className="text-left py-3">DOMAIN</th>
-                  <th className="text-left py-3">ACTION</th>
-                  <th className="text-left py-3">ROOT</th>
-                </tr>
-              </thead>
-              <tbody>
-                {projects.map((project, index) => (
-                  <tr key={index} className="border-b border-slate-700/50">
-                    <td className="py-4">
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
-                        <span className="text-white text-sm">{project.id}</span>
-                      </div>
-                    </td>
-                    <td className="py-4">
-                      <span className="bg-green-600 text-white text-xs px-2 py-1 rounded">{project.status}</span>
-                    </td>
-                    <td className="py-4 text-white text-sm">{project.cpu}</td>
-                    <td className="py-4 text-white text-sm">{project.price}</td>
-                    <td className="py-4">
-                      <div className="flex items-center">
-                        <div className="w-20 bg-slate-700 rounded-full h-2 mr-2">
-                          <div
-                            className="bg-blue-500 h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${project.usage}%` }}
-                          ></div>
-                        </div>
-                        <span className="text-white text-sm">{project.usage}%</span>
-                      </div>
-                    </td>
-                    <td className="py-4">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded transition-colors">
-                        {project.domain}
-                      </button>
-                    </td>
-                    <td className="py-4">
-                      <button className="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1 rounded transition-colors">
-                        {project.action}
-                      </button>
-                    </td>
-                    <td className="py-4 text-blue-400 text-sm">{project.root}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+              {projectData.map((project, i) => (
+                <div
+                  key={i}
+                  className="grid grid-cols-6 gap-4 items-center py-2 border-b border-slate-700 last:border-b-0"
+                >
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-3 h-3 rounded ${
+                        i === 0
+                          ? "bg-red-500"
+                          : i === 1
+                            ? "bg-blue-500"
+                            : i === 2
+                              ? "bg-green-500"
+                              : i === 3
+                                ? "bg-green-500"
+                                : i === 4
+                                  ? "bg-blue-500"
+                                  : "bg-red-500"
+                      }`}
+                    ></div>
+                    <span className="font-medium">{project.ip}</span>
+                  </div>
+
+                  <div className="text-sm opacity-75">{project.specs}</div>
+
+                  <div className="font-medium">{project.cost}</div>
+
+                  <div className="flex items-center gap-2">
+                    <span>{project.load}%</span>
+                    <Progress value={project.load} className="w-16 h-1" />
+                  </div>
+
+                  <Button size="sm" variant="outline" className="text-xs">
+                    {project.domain || "GET DOMAIN"}
+                  </Button>
+
+                  <div className="text-xs opacity-75">UP</div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
     <footer className="flex items-center justify-between py-7">

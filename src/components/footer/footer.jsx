@@ -1,3 +1,4 @@
+import "./footer.css"
 function Footer() {
     return(
         <footer className="bg-black sm:pt-80 pt-60 pb-16 font-syne">
@@ -41,13 +42,13 @@ function Footer() {
                     </li>
                 </ul>
                 <div className="flex sm:gap-10 gap-5 justify-center">
-                    <p className="text-[14px] font-normal text-white">
+                    <p className="text-[14px] font-normal text-white cursor-pointer">
                     BIG DATA
                     </p>
-                    <p className="text-[14px] font-normal text-white">
+                    <p className="text-[14px] font-normal text-white cursor-pointer">
                     WALLET
                     </p>
-                    <p className="text-[14px] font-normal text-white">
+                    <p className="text-[14px] font-normal text-white cursor-pointer">
                     LICENSE
                     </p>
                 </div>
