@@ -1,0 +1,6 @@
+@import "tailwindcss";
+/* src/index.css yoki App.css */
+
+body {
+  @apply font-inter;
+}

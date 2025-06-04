@@ -1,0 +1,8 @@
+.dashboard{
+    background-image: url(../../assets/images/Background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}

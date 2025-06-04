@@ -1,0 +1,21 @@
+.text-white-gradient {
+    background: linear-gradient(97.89deg, #FFFFFF 70.67%, rgba(117, 122, 140, 0) 108.55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .hover-effect:hover {
+    box-shadow: 0px 3.5px 5.5px 0px #00000005;
+    background: #FFFFFF05;
+    .fa-house-chimney,.fa-chart-simple,.fa-credit-card,.fa-wrench,.fa-rocket,.fa-file,.fa-user{
+        background-color: #0075FF;
+        color: white;
+    }
+  }
+  .cart{
+    background-image: url(../../assets/images/3ba68ebca794d6d97d617807d5448758406dcbad.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
